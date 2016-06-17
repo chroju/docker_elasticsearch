@@ -9,8 +9,9 @@ tar -xzf elasticsearch-2.3.3.tar.gz && \
 rm -rf elasticsearch-2.3.3.tar.gz && \
 addgroup -g 3000 elasticsearch && \
 adduser -S -u 3000 -g 3000 elasticsearch && \
-chown -R elasticsearch:elasticsearch /run/elasticsearch-2.3.3./bin
+chown -R elasticsearch:elasticsearch /run/elasticsearch-2.3.3/bin
 
+USER elasticsearch
 VOLUME /run/elasticsearch-2.3.3/data
 EXPOSE 9200 9200
 CMD /run/elasticsearch-2.3.3/bin/elasticsearch
