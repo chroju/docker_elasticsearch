@@ -18,7 +18,6 @@ chown -R elasticsearch:elasticsearch "${path}"; \
 done
 
 RUN /run/elasticsearch-2.3.3/bin/plugin install analysis-kuromoji
-RUN /run/elasticsearch-2.3.3/bin/plugin install shield
 
 USER elasticsearch
 VOLUME /run/elasticsearch-2.3.3/data
