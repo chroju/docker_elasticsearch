@@ -19,7 +19,9 @@ done
 
 RUN /run/elasticsearch-2.3.3/bin/plugin install analysis-kuromoji
 
+COPY elasticsearch.yml /run/elasticsearch-2.3.3/config/
+
 USER elasticsearch
 VOLUME /run/elasticsearch-2.3.3/data
-EXPOSE 9200 9200
-CMD /bin/sh
+EXPOSE 9200 9300
+CMD ["/run/elasticsearch-2.3.3/bin/elasticsearch"]
