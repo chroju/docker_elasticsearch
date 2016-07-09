@@ -1,10 +1,10 @@
 FROM alpine
 MAINTAINER chroju
 
-RUN apk add --update --no-cache openjdk8 curl
+RUN apk add --update --no-cache openjdk8 wget ca-certificates
 
 RUN cd /run && \
-curl -s -L -0 https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.3.3/elasticsearch-2.3.3.tar.gz > elasticsearch-2.3.3.tar.gz && \
+wget https://download.elastic.co/elasticsearch/release/org/elasticsearch/distribution/tar/elasticsearch/2.3.3/elasticsearch-2.3.3.tar.gz && \
 tar -xzf elasticsearch-2.3.3.tar.gz && \
 rm -rf elasticsearch-2.3.3.tar.gz && \
 addgroup -g 3000 elasticsearch && \
